@@ -9,6 +9,7 @@ public class LoginPage extends BasePage {
     private By passwordLokator = By.id("password");
     private By loginDugmeLokator = By.id("login-button");
     private By loginLogoLokator = By.className("login_logo");
+    private By noviLokator = By.id("noviLokator");
 
     public LoginPage(WebDriver driver) {
         super(driver);
