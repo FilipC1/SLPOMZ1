@@ -19,15 +19,15 @@ public class CartPage extends BasePage {
     }
 
     public boolean proizvodJeUKorpi() {
-                return isDisplayed(proizvodUKorpiLokator);
+        return isDisplayed(proizvodUKorpiLokator);
     }
 
     public boolean ranacJeUKorpi() {
-                return isDisplayed(ranacLokator);
+        return isDisplayed(ranacLokator);
     }
 
     public boolean checkoutDugme() {
-                return isDisplayed(checkoutDugmeLokator);
+        return isDisplayed(checkoutDugmeLokator);
     }
 
 

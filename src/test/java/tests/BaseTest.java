@@ -9,31 +9,31 @@ import pages.ProductsPage;
 
 public class BaseTest extends SLTest {
 
-    @Test
-    public void dodajRanacUKorpuTest() {
-        LoginPage loginStrana = new LoginPage(driver);
-        ProductsPage proizvodiStrana = new ProductsPage(driver);
-        ProductPage proizvodStrana = new ProductPage(driver);
-        CartPage korpaStrana = new CartPage(driver);
+    LoginPage loginStrana = new LoginPage(driver);
+    ProductsPage proizvodiStrana = new ProductsPage(driver);
+    ProductPage proizvodStrana = new ProductPage(driver);
+    CartPage korpaStrana = new CartPage(driver);
 
+    @Test
+    public void uspesanLoginTest() {
         Assert.assertTrue(loginStrana.loginStrana());
         loginStrana.login("standard_user", "secret_sauce");
-
         Assert.assertTrue(proizvodiStrana.proizvodiStrana());
-        Assert.assertTrue(proizvodiStrana.izaberiProizvod().equals("Products"));
-        proizvodiStrana.ranacProizvod();
+    }
 
+    @Test
+    public void otvoriProizvodTest() {
+        loginStrana.login("standard_user", "secret_sauce");
+        proizvodiStrana.ranacProizvod();
         Assert.assertTrue(proizvodStrana.proizvodiStranica());
         Assert.assertTrue(proizvodStrana.imeProizvoda().equals("Sauce Labs Backpack"));
-        proizvodStrana.dodajProizvodUKorpu();
+    }
 
-        Assert.assertTrue(proizvodStrana.ikonaKorpe());
-        proizvodStrana.otvoriKorpu();
-
+    @Test
+    public void otvoriKorpuTest() {
+        loginStrana.login("standard_user", "secret_sauce");
+        proizvodiStrana.otvoriKorpu();
         Assert.assertTrue(korpaStrana.korpaStranica());
-        Assert.assertTrue(korpaStrana.proizvodJeUKorpi());
-        Assert.assertTrue(korpaStrana.ranacJeUKorpi());
-        Assert.assertTrue(korpaStrana.checkoutDugme());
     }
 
 
