@@ -35,6 +35,12 @@ public class BaseTest extends SLTest {
         proizvodiStrana.otvoriKorpu();
         Assert.assertTrue(korpaStrana.korpaStranica());
     }
+    @Test
+    public void otvoriRanacTest() {
+        loginStrana.login("standard_user", "secret_sauce");
+        proizvodiStrana.ranacProizvod();
+        Assert.assertTrue(proizvodStrana.proizvodiStranica());
+    }
 
 
 
